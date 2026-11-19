@@ -152,4 +152,4 @@ if __name__ == '__main__':
     load_model()
     thread = threading.Thread(target=serial_read_thread, daemon=True)
     thread.start()
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=os.getenv('FLASK_DEBUG') == '1', host='0.0.0.0')
